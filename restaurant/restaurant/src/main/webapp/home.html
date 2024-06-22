@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurant Table Booking</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    body {
+        background-image: url('restau.jpeg');
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+    }
+    #frm {
+        width: 500px;
+        margin: auto;
+        margin-top: 70px;
+        background-color: rgb(0, 0, 0);
+        padding: 20px;
+        border-radius: 10px;
+    }
+    marquee 
+    {
+        margin-top: 25px;
+    }
+    .form-control {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: #fff;
+    }
+    .form-control:focus {
+        background-color: rgba(255, 255, 255, 0.3);
+        color: #fff;
+    }
+    .text-white {
+        color: #fff !important;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <form action="register" class="form card" id="frm" onsubmit="return validateForm()">
+        <h2 class="bg-danger text-white card-header">Restaurant Table Booking</h2>
+        <div class="table-responsive">
+            <table class="table table-hover" style="color:blue">
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="userName" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="email" name="email" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td>Mobile</td>
+                    <td><input type="text" name="mobile" class="form-control" required pattern="[0-9]{10}" title="Please enter a 10-digit phone number"></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <div class="form-check">
+                            <input type="radio" name="gender" class="form-check-input" value="male" id="male">
+                            <label for="male" class="form-check-label text-white">Male</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" name="gender" class="form-check-input" value="female" id="female">
+                            <label for="female" class="form-check-label text-white">Female</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Date</td>
+                    <td><input type="date" id="bookingDate" name="date" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td>Table</td>
+                    <td>
+                        <select name="table" class="form-control" id="tableSelect" style="color: black" required>
+                            <option value="" selected disabled>Select Table</option>
+                            <option value="1">Table 1</option>
+                            <option value="2">Table 2</option>
+                            <option value="3">Table 3</option>
+                            <option value="4">Table 4</option>
+                            <option value="5">Table 5</option>
+                            <option value="6">Table 6</option>
+                            <option value="7">Table 7</option>
+                            <option value="8">Table 8</option>
+                            <option value="9">Table 9</option>
+                            <option value="10">Table 10</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="card-footer">
+                    <td><button type="submit" class="btn btn-outline-success">Register</button></td>
+                    <td><button type="button" class="btn btn-outline-success" onclick="showUsers()">ADMIN</button></td>
+                </tr>
+                <tr>
+                    <td><button type="reset" class="btn btn-outline-danger">Cancel</button></td>
+                </tr>
+                <tr>
+                    <td><button class="btn btn-outline-success d-block"><a href="about.html" style="text-decoration: none; color: #fff;">About us</a></button></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+
+<script>
+    function validateForm() {
+        var selectedDate = new Date(document.getElementById('bookingDate').value);
+        var currentDate = new Date();
+        currentDate.setHours(0, 0, 0, 0); // Set time to midnight for comparison
+
+        if (selectedDate < currentDate) {
+            alert("Please select a date that is not in the past.");
+            return false;
+        }
+
+        // Here you can add logic to check if the selected table is already booked for the selected date
+        // This validation requires server-side code to interact with a database
+
+        return true;
+    }
+
+    function showUsers() {
+        var password = prompt("Please enter the password:");
+        if (password === '1234') {
+            window.location.href = 'showdata';
+        } else {
+            alert('Incorrect password. Please try again.');
+        }
+    }
+</script>
+</body>
+</html>

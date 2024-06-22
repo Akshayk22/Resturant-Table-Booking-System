@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular Foods</title>
+    <style>
+        /* Some basic styling for better presentation */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .food-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .food-image {
+            width: 100px;
+            margin-right: 20px;
+            border-radius: 8px;
+        }
+        .food-name {
+            font-size: 18px;
+            font-weight: bold;
+        }
+         @keyframes blink {
+            0% { color: red; }
+            50% { color: blue; }
+            100% { color: red; }
+        }
+
+        h3.blinking {
+            animation: blink 1s infinite;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Various Foods</h1>
+
+    <!-- Food items -->
+    <div class="food-item">
+        <img class="food-image" src="burger.jpeg" alt="Burger">
+        <div class="food-name">Burger</div>
+    </div>
+
+    <div class="food-item">
+        <img class="food-image" src="dosa.jpeg" alt="Dosa">
+        <div class="food-name">Dosa</div>
+    </div>
+
+    <div class="food-item">
+        <img class="food-image" src="idle.jpeg" alt="Idli">
+        <div class="food-name">Idli</div>
+    </div>
+
+    <div class="food-item">
+        <img class="food-image" src="pizza.jpeg" alt="Pizza">
+        <div class="food-name">Pizza</div>
+    </div>
+
+    <div class="food-item">
+        <img class="food-image" src="sushi.jpeg" alt="Sushi">
+        <div class="food-name">Sushi</div>
+    </div>
+     <h3 class="blinking">YOUR TABLE BOOKED SUCCESSFULLY, WE ARE WAITING FOR YOU.....</h3>
+    <button class="btn btn-outline-success d-block"><a href="home.html" style="text-decoration: none; color: #fff;">HOME</a></button>
+</div>
+
+</body>
+</html>
